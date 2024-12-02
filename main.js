@@ -86,7 +86,7 @@ async function install_luajit(luaInstallPath, luajitVersion) {
 
   const luaCompileFlags = core.getInput('luaCompileFlags')
 
-  const luaSourceTar = await tc.downloadTool(`https://luajit.org/download/LuaJIT-${luajitVersion}.tar.gz`)
+  const luaSourceTar = await tc.downloadTool(`https://github.com/LuaJIT/LuaJIT/archive/refs/tags/v${luajitVersion}.tar.gz`)
   await io.mkdirP(luaExtractPath)
   await tc.extractTar(luaSourceTar, path.join(process.env["RUNNER_TEMP"], BUILD_PREFIX))
 
